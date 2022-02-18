@@ -1,0 +1,1503 @@
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* variables */
+:root{
+    --color-main: #F4F1EC;
+    --color-main-darker : #CDC8C2;
+    --color-sec : #202020;
+    --color-sec-lighter : #4D4C4A;
+}
+
+/* animations */
+@keyframes anim-height {
+    from {height: 0;}
+    to {height: 100%;}
+}
+@keyframes anim-width {
+    from {width: 0;}
+    to {width: 100%;}
+}
+@keyframes anim-opacity {
+    from {opacity: 0;}
+    to {opacity: 100%;}
+}
+@keyframes anim-scale {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+@keyframes move-slogan-t {
+    0% {transform: translate(383px , 210px); opacity: 0;}
+    12% {transform: translate(383px , 210px); opacity: 0;}
+    50% {transform: translate(383px , 210px); opacity: 1;}
+    75% {transform: translate(651.86px , 210px); opacity: 1;}
+    100% {transform: translate(651.86px , 210px); opacity: 1;}
+}
+@keyframes move-slogan-h {
+    0% {transform: translate(485px, 210px); opacity: 0;}
+    12% {transform: translate(485px, 210px); opacity: 1;}
+    50% {transform: translate(485px, 210px); opacity: 1;}
+    75% {transform: translate(753.86px , 210px); opacity: 1;}
+    100% {transform: translate(753.86px , 210px); opacity: 1;}
+}
+@keyframes move-slogan-i {
+    0% {transform: translate(600px, 210px); opacity: 0;}
+    12% {transform: translate(600px, 210px); opacity: 1;}
+    50% {transform: translate(600px, 210px); opacity: 1;}
+    75% {transform: translate(868.86px , 210px); opacity: 1;}
+    100% {transform: translate(868.86px , 210px); opacity: 1;}
+}
+
+.anim-width{
+    width: 0;
+    animation: anim-width 1.5s ease-in-out 0s 1 normal forwards;
+}
+.anim-height{
+    height: 0;
+    animation: anim-height 1.5s ease-in-out 0s 1 normal forwards;
+}
+.anim-opacity{
+    opacity: 0;
+    animation: anim-opacity 1.5s linear 0s 1 normal forwards;
+}
+.anim-scale{
+    transform: scale(0);
+    animation: anim-scale 1s ease-in-out 0s 1 normal forwards;
+}
+.anim-width-reverse{
+    width: 100%;
+    animation: anim-width 1.5s ease-in-out 0s 1 reverse forwards;
+}
+.anim-height-reverse{
+    height: 100%;
+    animation: anim-height 1.5s ease-in-out 0s 1 reverse forwards;
+}
+.anim-opacity-reverse{
+    opacity: 100%;
+    animation: anim-opacity 1.5s linear 0s 1 reverse forwards;
+}
+.anim-scale-reverse{
+    transform: scale(1);
+    animation: anim-scale 1s ease-in-out 0s 1 reverse forwards;
+}
+.anim-delay-250{
+    animation-delay: .25s;
+}
+.anim-delay-500{
+    animation-delay: .5s;
+}
+.anim-delay-750{
+    animation-delay: .75s;
+}
+.anim-delay-1000{
+    animation-delay: 1s;
+}
+.anim-delay-1250{
+    animation-delay: 1.25s;
+}
+.anim-delay-1500{
+    animation-delay: 1.5s;
+}
+.anim-delay-1750{
+    animation-delay: 1.75s;
+}
+.anim-delay-2000{
+    animation-delay: 2s;
+}
+.anim-delay-2250{
+    animation-delay: 2.25s;
+}
+.anim-delay-2500{
+    animation-delay: 2.5s;
+}
+.anim-delay-2750{
+    animation-delay: 2.75s;
+}
+.anim-delay-3000{
+    animation-delay: 3s;
+}
+.anim-delay-3500{
+    animation-delay: 3.5s;
+}
+.anim-delay-4000{
+    animation-delay: 4s;
+}
+
+/* special animation */
+.slogan-1,
+.slogan-2,
+#t-1,
+#t-h,
+#t-i{
+    opacity: 0;
+}
+#t-1{
+    transform: translate(383px , 210px);
+    animation: move-slogan-t 4s ease-in-out 0s 1 normal forwards;
+}
+#h-1{
+    transform: translate(485px, 210px);
+    animation: move-slogan-h 4s ease-in-out 0s 1 normal forwards;
+}
+#i-1{
+    transform: translate(600px, 210px);
+    animation: move-slogan-i 4s ease-in-out 0s 1 normal forwards;
+}
+.slogan-1{
+    animation: anim-opacity 1.5s ease-in-out 1s 1 normal forwards;
+}
+.slogan-2{
+    animation: anim-opacity 1.5s ease-in-out 3s 1 normal forwards;
+}
+
+/* 
+
+
+    the main css
+
+
+*/
+*{
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: var(--color-main);
+
+    min-width: 100vw;
+    width: 100vw;
+    max-width: 100vw;
+
+    height: auto;
+}
+body::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+h1 , h2 , h3 , p , a , button {
+    margin:0;
+}
+
+img {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 10px 20px var(--color-main-darker);
+}
+
+button {
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--color-sec);
+    border: 1px solid var(--color-sec);
+    font-size: 16px;
+    font-family: 'Cambria Math' , serif;
+    font-weight: normal;
+    text-overflow: clip;
+    line-height: 32px;
+    text-decoration: none;
+    min-width: 24px;
+    min-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+}
+button:hover{
+    background-color: var(--color-sec);
+    color: var(--color-main);
+}
+
+.text {
+    font-size: 14px;
+    font-family: 'Cambria Math' , serif;
+    font-weight: normal;
+    text-overflow: clip;
+    line-height: 24px;
+    text-decoration: none;
+}
+.text-vertical{
+    writing-mode: vertical-lr;
+    letter-spacing: 2px;
+}
+
+.title{
+    font-size: 32px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    text-overflow: clip;
+    line-height: 32px;
+    letter-spacing: 8px;
+}
+.title-small{
+    font-size: 16px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    text-overflow: clip;
+    line-height: 16px;
+    letter-spacing: 4px;
+}
+.title-nav {
+    font-size: 16px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    text-overflow: clip;
+    line-height: 16px;
+    letter-spacing: 2px;
+    color: var(--color-main-darker);
+    white-space: nowrap;
+}
+.title-nav-active {
+    line-height: 24px;
+    color: var(--color-sec);
+    border-bottom: 1px solid var(--color-sec);
+}
+
+.subtitle{
+    font-size: 12px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    text-overflow: ellipsis;
+    line-height: 12px;
+    letter-spacing: 10px;
+    color: var(--color-main-darker);
+}
+
+.margin-bottom {
+    margin-bottom: 40px;
+}
+.margin-bottom-big {
+    margin-bottom: 80px;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-main);
+    border-bottom: 1px solid var(--color-main-darker);
+    z-index: 10000;
+}
+#nav > .nav-logo {
+    fill: var(--color-sec);
+    height: 24px;
+}
+
+#content {
+    width: 100vw;
+    box-sizing: border-box;
+    margin-top: 40px;
+    background-color: var(--color-main);
+    display: flex;
+    flex-direction: column;
+}
+#content > div {
+    width: 100%;
+    padding: 64px 24px;
+    border-bottom: 1px solid var(--color-main-darker);
+}
+#intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#intro > #slogan {
+    fill: var(--color-sec);
+    width: 100%;
+    height: auto;
+}
+#intro > .intro-container-info {
+    width: 100%;
+    height: 256px;
+}
+#intro > .intro-container-info > .intro-container-img {
+    width: calc(100% - 64px);
+    height: 100%;
+}
+#intro > .intro-container-info > button{
+    width: 40px;
+    height: 100%;
+    max-height: 100%;
+    margin-left: 24px;
+}
+
+#intro-dev > * {
+    width: 100%;
+}
+#intro-dev > div {
+    height: 300px;
+}
+
+#intro-inter > * {
+    width: 100%;
+}
+#intro-inter > div {
+    height: 200px;
+}
+
+#intro-photo > * {
+    width: 100%;
+}
+#intro-photo > .container-imgs {
+    height: 200px;
+}
+#intro-photo > .container-imgs > div{
+    height: 100%;
+    width: 33.33%;
+}
+#intro-photo > .container-imgs > div:nth-child(1) > img{
+    border-radius: 10px 0 0 10px;
+    box-shadow: none;
+}
+#intro-photo > .container-imgs > div:nth-child(2) > img{
+    border-radius: 0;
+    box-shadow: none;
+}
+#intro-photo > .container-imgs > div:nth-child(3) > img{
+    border-radius: 0 10px 10px 0;
+    box-shadow: none;
+}
+
+#thib {
+    background-color: var(--color-sec);
+    border-bottom: none;
+}
+#thib > * {
+    width: 100%;
+    color: var(--color-main);
+}
+#thib > div {
+    height: 225px;
+    position: relative;
+}
+#thib > div > img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    box-shadow: none;
+    z-index: 10;
+}
+#thib > div > img:nth-child(1) {
+    left: calc(50% - 150px);
+    top: 50px;
+}
+#thib > div > img:nth-child(2) {
+    left: calc(50% - 75px);
+    top: 75px;
+    width: 150px;
+    height: 150px;
+    z-index: 100;
+}
+#thib > div > img:nth-child(3) {
+    left: calc(50% + 60px);
+    top: 35px;   
+}
+
+
+#content > div > .header > h3 {
+    margin-bottom: 16px;
+}
+#content > div > .header > .nav {
+    align-items: baseline;
+    height: 32px;
+    max-width: 100%;
+    overflow: scroll hidden;
+}
+#content > div > .header > .nav::-webkit-scrollbar {
+    display: none;
+    opacity: 0;
+}
+#content > div > .header > .nav > h2 {
+    cursor: pointer;
+    margin: 0 24px 0 0;
+}
+#content > div > .header > .nav > h2:last-child() {
+    margin-right: 0;
+}
+
+.skill-header {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.skill-header > .skill-rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.skill-header > .skill-rating-container > h3 {
+    margin-bottom: 8px;
+}
+.skill-header > .skill-rating-container > .skill-rating-container-strips > div{
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--color-main-darker);
+    margin-right: 8px;
+}
+.skill-header > .skill-rating-container > .skill-rating-container-strips > div:last-child(){
+    margin-right: 0;
+}
+.skill-header > .skill-rating-container > .skill-rating-container-strips > .bg-dark {
+    background-color: var(--color-sec);
+}
+
+#dev > .content > img {
+    height: 200px;
+}
+#dev #dev-img {
+    box-shadow: none;
+}
+.skill-content-project {
+    border: 1px solid var(--color-sec);
+    border-radius: 10px;
+    padding: 24px;
+}
+.skill-content-project > .subtitle {
+    color: var(--color-main-darker);
+    margin-bottom: 16px;
+}
+.skill-content-project > img {
+    height: 200px;
+    box-shadow: none;
+}
+
+#photo {
+    background-color: var(--color-sec);
+}
+#photo > *{
+    color: var(--color-main);
+}
+#photo > .header > .subtitle,
+#photo > .header > .nav > .title-nav{
+    color: var(--color-sec-lighter);
+}
+#photo > .header > .nav > .title-nav-active{
+    color: var(--color-main);
+    border-bottom: 1px solid var(--color-main);
+}
+#photo > .content > .content-imgs {
+    width: 100%;
+    height: 400px;
+}
+#photo > .content > .content-imgs > img{
+    box-shadow: none;
+}
+
+.tab-container {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tab-container > button{
+    padding: 0 8px;
+    font-size: 12px;
+    border-color: transparent;
+}
+.tab-container > .tab-container-tabs {
+    display: inline-flex;
+}
+.tab-container > .tab-container-tabs > div {
+    width: 4px;
+    height: 4px;
+    border-radius: 1px;
+    background-color: var(--color-sec-lighter);
+    margin-right: 8px;
+}
+.tab-container > .tab-container-tabs > .tab-active {
+    background-color: var(--color-main);
+}
+.tab-container > .tab-container-tabs > div:last-child() {
+    margin-right: 0;
+}
+#photo > .content > .tab-container > button{
+    color: var(--color-main);
+}
+#photo > .content > .tab-container > button:hover{
+    background-color: var(--color-main);
+    color: var(--color-sec);
+}
+
+#photo > .content > .content-img-container-edits {
+    width: 100%;
+    height: 200px;
+}
+#photo > .content > .content-img-container-edits > img {
+    box-shadow: none;
+}
+
+#inter > .content > .carousel {
+    width: 100%;
+    height: 200px;
+}
+#inter > .content > .tab-container > .tab-container-tabs > div {
+    background-color: var(--color-main-darker);
+}
+#inter > .content > .tab-container > .tab-container-tabs > .tab-active {
+    background-color: var(--color-sec);
+}
+
+#content > .footer {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 24px 24px 24px;
+    border-bottom: none;
+}
+
+
+
+/* specific */
+.opacity-0{
+    opacity: 0;
+    transition: all 750ms;
+}
+.height-0{
+    height: 0;
+    transition: height 750ms;
+}
+.width-0{
+    width: 0;
+    transition: width 750ms;
+}
+.display-none{
+    display: none!important;
+}
+.scale-0{
+    transform: scale(0);
+    transform-origin: center;
+}
+
+/* phone horizontal mode */
+@media screen and (orientation: landscape ) and (max-height: 400px) {
+    #content > #intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40vh 30vh;
+        grid-template-areas: 
+        "s ib"
+        "t ib";
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+    #content > #intro #slogan {
+        grid-area: s;
+    }
+    #content > #intro > .text {
+        grid-area: t;
+        margin-bottom: 0;
+    }
+    #content > #intro > .intro-container-info {
+        grid-area: ib;
+        margin-left: 24px;
+        width: calc(100% - 24px);
+        height: 100%;
+    }
+
+    #content > #intro-dev {
+        display: grid;
+        grid-template-columns: 55vw 35vw;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+        "IDimg IDtitle"
+        "IDimg IDtext"
+        "IDbtn IDtext";
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #content > #intro-dev > .title {
+        grid-area: IDtitle;
+    }
+    #content > #intro-dev > .text {
+        grid-area: IDtext;
+    }
+    #content > #intro-dev > button {
+        grid-area: IDbtn;
+        margin-bottom: 0;
+        width: 80%;
+    }
+    #content > #intro-dev > div {
+        grid-area: IDimg;
+        height: 80%;
+        width: 80%;
+    }
+
+    #content > #intro-inter {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+        "IItitle IItitle IItitle"
+        "IIimg IIimg IIimg"
+        "IItext1 IItext2 IItext3"
+        "IIbtn IIempty IIempty";
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #content > #intro-inter > .title {
+        grid-area: IItitle;
+    }
+    #content > #intro-inter > p:nth-child(1) {
+        grid-area: IItext3;
+    }
+    #content > #intro-inter > p:nth-child(2) {
+        grid-area: IItext2;
+        margin-right: 24px;
+        margin-bottom: 0;
+        width: calc(100% - 24px);
+    }
+    #content > #intro-inter > p:nth-child(3) {
+        grid-area: IItext1;
+        margin-right: 24px;
+        margin-bottom: 0;
+        width: calc(100% - 24px);
+    }
+    #content > #intro-inter > button {
+        grid-area: IIbtn;
+        margin-bottom: 0;
+        margin-top: 24px;
+    }
+    #content > #intro-inter > div {
+        grid-area: IIimg;
+        height: 50vh;
+    }
+
+    #content > #intro-photo {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: 20vh auto auto;
+        grid-template-areas:
+        "IPtitle IPimg"
+        "IPtext1 IPimg"
+        "IPtext2 IPbtn";
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #content > #intro-photo > .title {
+        grid-area: IPtitle;
+        margin-bottom: 0;
+    }
+    #content > #intro-photo #css-t1 {
+        grid-area: IPtext1;
+        margin-bottom: 0;
+    }
+    #content > #intro-photo .text:nth-child(2) {
+        grid-area: IPtext1;
+    }
+    #content > #intro-photo > button {
+        grid-area: IPbtn;
+        margin-bottom: 0;
+        width: 60%;
+        height: 64px;
+        justify-self: center;
+    }
+    #content > #intro-photo > div {
+        grid-area: IPimg;
+        width: calc(100% - 24px);
+        height: auto;
+        margin-left: 24px;
+    }
+
+    #content > #thib {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+        "Ttitle Ttitle Ttitle"
+        "Ttext1 Timg Ttext3"
+        "Ttext2 Timg Ttext4";
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #content > #thib > .title {
+        grid-area: Ttitle;
+    }
+    #content > #thib > div {
+        grid-area: Timg;
+        justify-self: center;
+        width: 90%;
+        height: 100%;
+        margin: 0;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #content > #thib > div > img {
+        position: relative;
+        margin-bottom: 24px;
+        left: 0;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+    }
+    #content > #thib > p:nth-child(2){
+        grid-area: Ttext1;
+        margin-bottom: 0;
+    }
+    #content > #thib > p:nth-child(4){
+        grid-area: Ttext2;
+        margin-bottom: 0;
+    }
+    #content > #thib > p:nth-child(5){
+        grid-area: Ttext3;
+        margin-bottom: 24px;
+    }
+    #content > #thib > p:nth-child(6){
+        grid-area: Ttext4;
+        margin-bottom: 0;
+    }
+
+    #content > #dev > .content > .skill-header,
+    #content > #dev > .content > #dev-img {
+        padding: 0 20vw;
+    }
+    #content > #dev > .content > .skill-content-project{
+        margin: 0 20vw
+    }
+
+    #content > #photo > .content,
+    #content > #inter > .content {
+        padding: 0 20vw;
+    }
+}
+/* ipad in horizontal mode */
+@media screen and (orientation: landscape ) and (max-height: 800px) {
+    #content > #intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40vh 30vh;
+        grid-template-areas: 
+        "s ib"
+        "t ib";
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+    #content > #intro #slogan {
+        grid-area: s;
+    }
+    #content > #intro > .text {
+        grid-area: t;
+        margin-bottom: 0;
+    }
+    #content > #intro > .intro-container-info {
+        grid-area: ib;
+        margin-left: 24px;
+        width: calc(100% - 24px);
+        height: 100%;
+    }
+
+    #content > #intro-dev {
+        display: grid;
+        grid-template-columns: 55vw 35vw;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+        "IDimg IDtitle"
+        "IDimg IDtext"
+        "IDbtn IDtext";
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #content > #intro-dev > .title {
+        grid-area: IDtitle;
+    }
+    #content > #intro-dev > .text {
+        grid-area: IDtext;
+    }
+    #content > #intro-dev > button {
+        grid-area: IDbtn;
+        margin-bottom: 0;
+        width: 80%;
+    }
+    #content > #intro-dev > div {
+        grid-area: IDimg;
+        height: 80%;
+        width: 80%;
+    }
+
+    #content > #intro-inter {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+        "IItitle IItitle IItitle"
+        "IIimg IIimg IIimg"
+        "IItext1 IItext2 IItext3"
+        "IIbtn IIempty IIempty";
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #content > #intro-inter > .title {
+        grid-area: IItitle;
+    }
+    #content > #intro-inter > p:nth-child(1) {
+        grid-area: IItext3;
+    }
+    #content > #intro-inter > p:nth-child(2) {
+        grid-area: IItext2;
+        margin-right: 24px;
+        margin-bottom: 0;
+        width: calc(100% - 24px);
+    }
+    #content > #intro-inter > p:nth-child(3) {
+        grid-area: IItext1;
+        margin-right: 24px;
+        margin-bottom: 0;
+        width: calc(100% - 24px);
+    }
+    #content > #intro-inter > button {
+        grid-area: IIbtn;
+        margin-bottom: 0;
+        margin-top: 24px;
+    }
+    #content > #intro-inter > div {
+        grid-area: IIimg;
+        height: 50vh;
+    }
+
+    #content > #intro-photo {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: 20vh auto auto;
+        grid-template-areas:
+        "IPtitle IPimg"
+        "IPtext1 IPimg"
+        "IPtext2 IPbtn";
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #content > #intro-photo > .title {
+        grid-area: IPtitle;
+        margin-bottom: 0;
+    }
+    #content > #intro-photo #css-t1 {
+        grid-area: IPtext1;
+        margin-bottom: 0;
+    }
+    #content > #intro-photo .text:nth-child(2) {
+        grid-area: IPtext1;
+    }
+    #content > #intro-photo > button {
+        grid-area: IPbtn;
+        margin-bottom: 0;
+        width: 60%;
+        height: 64px;
+        justify-self: center;
+    }
+    #content > #intro-photo > div {
+        grid-area: IPimg;
+        width: calc(100% - 24px);
+        height: auto;
+        margin-left: 24px;
+    }
+
+    #content > #thib {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+        "Ttitle Ttitle Ttitle"
+        "Ttext1 Timg Ttext3"
+        "Ttext2 Timg Ttext4";
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #content > #thib > .title {
+        grid-area: Ttitle;
+    }
+    #content > #thib > div {
+        grid-area: Timg;
+        justify-self: center;
+        width: 90%;
+        height: 100%;
+        margin: 0;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #content > #thib > div > img {
+        position: relative;
+        margin-bottom: 24px;
+        left: 0;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+    }
+    #content > #thib > p:nth-child(2){
+        grid-area: Ttext1;
+        margin-bottom: 0;
+    }
+    #content > #thib > p:nth-child(4){
+        grid-area: Ttext2;
+        margin-bottom: 0;
+    }
+    #content > #thib > p:nth-child(5){
+        grid-area: Ttext3;
+        margin-bottom: 24px;
+    }
+    #content > #thib > p:nth-child(6){
+        grid-area: Ttext4;
+        margin-bottom: 0;
+    }
+
+    #content > #dev > .content > .skill-header,
+    #content > #dev > .content > #dev-img {
+        padding: 0 20vw;
+    }
+    #content > #dev > .content > .skill-content-project{
+        margin: 0 20vw
+    }
+}
+
+/* ipad in vertical mode */
+@media screen and (orientation: portrait ) and (min-width: 600px) {
+    #content > #intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40vh 30vh;
+        grid-template-areas: 
+        "s ib"
+        "t ib";
+        padding-top: 24px;
+        padding-bottom: 24px;
+    }
+    #content > #intro #slogan {
+        grid-area: s;
+    }
+    #content > #intro > .text {
+        grid-area: t;
+        margin-bottom: 0;
+    }
+    #content > #intro > .intro-container-info {
+        grid-area: ib;
+        margin-left: 24px;
+        width: calc(100% - 24px);
+        height: 100%;
+    }
+
+    #content > #intro-dev {
+        display: grid;
+        grid-template-columns: 55vw 35vw;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+        "IDimg IDtitle"
+        "IDimg IDtext"
+        "IDbtn IDtext";
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #content > #intro-dev > .title {
+        grid-area: IDtitle;
+    }
+    #content > #intro-dev > .text {
+        grid-area: IDtext;
+    }
+    #content > #intro-dev > button {
+        grid-area: IDbtn;
+        margin-bottom: 0;
+        width: 80%;
+    }
+    #content > #intro-dev > div {
+        grid-area: IDimg;
+        height: 80%;
+        width: 80%;
+    }
+
+    #content > #intro-inter {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+        "IItitle IItitle IItitle"
+        "IIimg IIimg IIimg"
+        "IItext1 IItext2 IItext3"
+        "IIbtn IIempty IIempty";
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #content > #intro-inter > .title {
+        grid-area: IItitle;
+    }
+    #content > #intro-inter > p:nth-child(1) {
+        grid-area: IItext3;
+    }
+    #content > #intro-inter > p:nth-child(2) {
+        grid-area: IItext2;
+        margin-right: 24px;
+        margin-bottom: 0;
+        width: calc(100% - 24px);
+    }
+    #content > #intro-inter > p:nth-child(3) {
+        grid-area: IItext1;
+        margin-right: 24px;
+        margin-bottom: 0;
+        width: calc(100% - 24px);
+    }
+    #content > #intro-inter > button {
+        grid-area: IIbtn;
+        margin-bottom: 0;
+        margin-top: 24px;
+    }
+    #content > #intro-inter > div {
+        grid-area: IIimg;
+        height: 50vh;
+    }
+
+    #content > #intro-photo {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: 20vh auto auto;
+        grid-template-areas:
+        "IPtitle IPimg"
+        "IPtext1 IPimg"
+        "IPtext2 IPbtn";
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #content > #intro-photo > .title {
+        grid-area: IPtitle;
+        margin-bottom: 0;
+    }
+    #content > #intro-photo #css-t1 {
+        grid-area: IPtext1;
+        margin-bottom: 0;
+    }
+    #content > #intro-photo .text:nth-child(2) {
+        grid-area: IPtext1;
+    }
+    #content > #intro-photo > button {
+        grid-area: IPbtn;
+        margin-bottom: 0;
+        width: 60%;
+        height: 64px;
+        justify-self: center;
+    }
+    #content > #intro-photo > div {
+        grid-area: IPimg;
+        width: calc(100% - 24px);
+        height: auto;
+        margin-left: 24px;
+    }
+
+    #content > #thib {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+        "Ttitle Ttitle Ttitle"
+        "Ttext1 Timg Ttext3"
+        "Ttext2 Timg Ttext4";
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    #content > #thib > .title {
+        grid-area: Ttitle;
+    }
+    #content > #thib > div {
+        grid-area: Timg;
+        justify-self: center;
+        width: 90%;
+        height: 100%;
+        margin: 0;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #content > #thib > div > img {
+        position: relative;
+        margin-bottom: 24px;
+        left: 0;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+    }
+    #content > #thib > p:nth-child(2){
+        grid-area: Ttext1;
+        margin-bottom: 0;
+    }
+    #content > #thib > p:nth-child(4){
+        grid-area: Ttext2;
+        margin-bottom: 0;
+    }
+    #content > #thib > p:nth-child(5){
+        grid-area: Ttext3;
+        margin-bottom: 24px;
+    }
+    #content > #thib > p:nth-child(6){
+        grid-area: Ttext4;
+        margin-bottom: 0;
+    }
+
+    #content > #dev > .content > .skill-header,
+    #content > #dev > .content > #dev-img {
+        padding: 0 20vw;
+    }
+    #content > #dev > .content > .skill-content-project{
+        margin: 0 20vw
+    }
+}
+
+/* ipad in vertical mode */
+@media screen and (min-width: 1600px) {
+    
+    .margin-bottom {
+        margin-bottom: 40px;
+    }
+
+    #content {
+        display: grid;
+        grid-template-columns: 2fr 4fr 3fr;
+        grid-template-rows: repeat(6 , auto);
+        grid-template-areas: 
+        "IntroI Intro IntroP"
+        "IntroI IntroD IntroP"
+        "Thib Thib Thib"
+        "Dev Dev Dev"
+        "Photo Photo Photo"
+        "Inter Inter Inter";
+        flex-direction: unset;
+        margin-top: 0;
+        width: 100vw;
+    }
+
+    #content > #intro {
+        grid-area: Intro;
+        padding: 80px 40px 40px 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 40px 40px;
+        max-height: 49vh;
+    }
+    #content > #intro > #slogan {
+        grid-column: 1 / 2;
+        grid-row: 1/2;
+        margin:0;
+        height: auto;
+        width: 100%;
+    }
+    #content > #intro > .text {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        margin: 0;
+    }
+    #content > #intro > .intro-container-info {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        height: 100%;
+        flex-direction: column;
+    }
+    #content > #intro > .intro-container-info > button {
+        margin: 40px 0 0 0;
+        height: 64px;
+        width: 100%;
+        height: auto;
+    }
+    #content > #intro > .intro-container-info > button > p {
+        writing-mode: horizontal-tb;
+    }
+    #content > #intro > .intro-container-info > .intro-container-img {
+        width: 100%;
+        height: calc(100% - 104px);
+    }
+
+    #content > #intro-dev {
+        grid-area: IntroD;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+        padding: 40px;
+        grid-gap: 0 40px;
+        height: 51vh;
+    }
+    #content > #intro-dev > * {
+        margin: 0;
+    }
+    #content > #intro-dev > .title {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    #content > #intro-dev > .text {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    #content > #intro-dev > button {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        height: 64px;
+    }
+    #content > #intro-dev > div {
+        grid-column: 1 / 2;
+        grid-row: 1 / 4;
+        height: 80%;
+        width: 90%;
+        justify-self: center;
+        align-self: center;
+    }
+
+    #content > #intro-inter {
+        grid-area: IntroI;
+        border-right: 1px solid var(--color-main-darker);
+        padding: 80px 40px 40px 40px;
+    }
+
+    #content > #intro-photo {
+        grid-area: IntroP;
+        border-left: 1px solid var(--color-main-darker);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 64px auto 64px auto;
+        grid-gap: 40px 40px;
+        height: 100vh;
+        padding: 80px 40px 40px 40px;
+    }
+    #content > #intro-photo > * {
+        margin: 0;
+        height: auto;
+    }
+    #content > #intro-photo > .container-imgs {
+        grid-column: 1 / 3;
+        grid-row: 4 / 5;
+        height: 100%;
+    }
+    #content > #intro-photo > .title {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+    #content > #intro-photo > .text:nth-child(3) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    #content > #intro-photo > .text:nth-child(4) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    #content > #intro-photo > button {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        height: 64px;
+    }
+
+    #content > #thib {
+        grid-area: Thib;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 64px auto auto auto auto;
+        grid-gap: 40px 0;
+        padding: 160px 240px;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    #content > #thib > * {
+        margin: 0;
+    }
+    #content > #thib > .title {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    #content > #thib > .text:nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    #content > #thib > .text:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    #content > #thib > .text:nth-child(5) {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+    #content > #thib > .text:nth-child(6) {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+    }
+    #content > #thib > div {
+        grid-column: 2 / 3;
+        grid-row: 2 / 6;
+        justify-self: center;
+        align-self: center;
+        width: 100%;
+        height: 100%;
+    }
+    #content > #thib > div > img:nth-child(1) {
+        width: 200px;
+        height: 200px;
+        top: 0;
+        left: 200px;
+    }
+    #content > #thib > div > img:nth-child(2) {
+        width: 300px;
+        height: 300px;
+        left: calc(50% - 150px);
+    }
+    #content > #thib > div > img:nth-child(3) {
+        width: 250px;
+        height: 250px;
+        left: calc(50% + 125px);
+    }
+
+    #content > #dev {
+        grid-area: Dev;
+        padding: 160px 240px;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    #content > #dev > .header {
+        margin-bottom: 80px;
+    }
+    #content > #dev > .content {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: auto auto auto;
+        column-gap: 240px;
+        row-gap: 0;
+    }
+    #content > #dev > .content > * {
+        margin: 0;
+    }
+    #content > #dev > .content > .text {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin-bottom: 80px;
+    }
+    #content > #dev > .content > .skill-header {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        height: 64px;
+        align-items: flex-start;
+        margin-bottom: 80px;
+
+    }
+    #content > #dev > .content > .skill-content-project > img {
+        height: 300px;
+        object-fit: contain;
+    }
+    #content > #dev > .content > img {
+        grid-column: 1 / 2;
+        grid-row: 3/ 4;
+    }
+    #content > #dev > .content > .skill-content-project {
+        grid-column: 2 / 3;
+        grid-row: 1 / 4;
+        padding: 40px;
+    }
+
+    #content > #photo {
+        grid-area: Photo;
+        padding: 160px 240px;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    #content > #photo > .header {
+        margin-bottom: 80px;
+    }
+    #content > #photo > .content {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-rows: 64px auto auto 34px;
+        gap: 40px 80px;
+        grid-template-areas: 
+        "viewer title"
+        "viewer text"
+        "viewer editor"
+        "tab editor";
+    }
+    #content > #photo > .content > .content-imgs {
+        grid-area: viewer;
+        margin: 0;
+        height: 60vh;
+    }
+    #content > #photo > .content > .tab-container {
+        grid-area: tab;
+        margin: 0;
+
+    }
+    #content > #photo > .content > .title-small {
+        grid-area: title;
+        margin: 0;
+    }
+    #content > #photo > .content > .text {
+        grid-area: text;
+        margin: 0;
+    }
+    #content > #photo > .content > .content-img-container-edits {
+        grid-area: editor;
+        margin: 0;
+        height: 300px;
+        width: 60%;
+        justify-self: flex-end;
+        align-self: flex-end;
+    }
+
+
+    #content > #inter {
+        grid-area: Inter;
+        padding: 160px 240px;
+        max-width: 100vw;
+        box-sizing: border-box;
+    }
+    #content > #inter > .header {
+        margin-bottom: 80px;
+    }
+    #content > #inter > .content {
+        display: grid;
+        grid-template-columns: 3fr 32px 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 40px;
+    }
+    #content > #inter > .content > .carousel {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        margin-bottom: 0;
+        height: 60vh;
+    }
+    #content > #inter > .content > .tab-container {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    #content > #inter > .content > .tab-container > button {
+        writing-mode: vertical-lr;
+    }
+    #content > #inter > .content > .tab-container > div{
+        flex-direction: column;
+        align-self: center;
+        justify-self: center;
+        height: auto;
+    }
+    #content > #inter > .content > .tab-container > div > div{
+        margin: 0 0 8px 0;
+    }
+    #content > #inter > .content > .tab-container > :last-child(){
+        margin: 0;
+    }
+    #content > #inter > .content > .title-small {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        align-self: flex-end;
+    }
+    #content > #inter > .content > .text {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+    }
+}
